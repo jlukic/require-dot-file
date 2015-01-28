@@ -24,8 +24,11 @@ module.exports = function(file, directory) {
       }
     }
   ;
-  // start walk from current directory
-  walk(__dirname + '/');
+
+  // start walk from outside node_modules
+  directory = directory || (__dirname + '/../../');
+
+  walk(directory);
 
   if(!requirePath) {
     throw new Error('Unable to find: ' + file);
