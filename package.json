@@ -1,8 +1,8 @@
 {
   "name": "require-dot-file",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "Require Dot File",
-  "description": "Recursively walks dot folders looking for a config file",
+  "description": "Recursively walks parent folders looking for a config file",
   "homepage": "http://github.com/jlukic/require-dot-file/",
   "author": "Jack Lukic <jack@semantic-ui.com>",
   "license": "MIT",
