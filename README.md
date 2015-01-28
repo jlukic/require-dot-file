@@ -1,4 +1,10 @@
-# Usage
+##  Install
+
+```javascript
+npm install require-dot-file
+```
+
+## Usage
 
 This is a simple module used for recursively searching across all parent folders for a file to require.
 
