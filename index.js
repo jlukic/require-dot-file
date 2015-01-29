@@ -34,7 +34,6 @@ module.exports = function(file, directory) {
     throw new Error('Unable to find: ' + file);
   }
 
-  require(requirePath);
-  return true;
+  return require(requirePath);
 
 };
