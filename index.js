@@ -20,13 +20,13 @@ module.exports = function(file, directory) {
           return;
         }
         // otherwise recurse
-        walk(directory + '../', file);
+        return walk(directory + '../', file);
       }
     }
   ;
 
-  // start walk from outside node_modules
-  directory = directory || (__dirname + '/../../');
+  // start walk from outside node_module
+  directory = directory || (__dirname + '/../');
 
   walk(directory);
 

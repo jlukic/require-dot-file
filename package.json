@@ -1,6 +1,6 @@
 {
   "name": "require-dot-file",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "title": "Require Dot File",
   "description": "Recursively walks parent folders looking for a config file",
   "homepage": "http://github.com/jlukic/require-dot-file/",
