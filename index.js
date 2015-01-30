@@ -20,7 +20,7 @@ module.exports = function(file, directory) {
           return;
         }
         // otherwise recurse
-        return walk(directory + '../', file);
+        walk(directory + '../', file);
       }
     }
   ;
@@ -33,7 +33,6 @@ module.exports = function(file, directory) {
   if(!requirePath) {
     throw new Error('Unable to find: ' + file);
   }
-
   return require(requirePath);
 
 };
