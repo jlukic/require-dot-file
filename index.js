@@ -31,7 +31,8 @@ module.exports = function(file, directory) {
   walk(directory);
 
   if(!requirePath) {
-    throw new Error('Unable to find: ' + file);
+    // throw new Error('Unable to find: ' + file);
+    return false;
   }
   return require(requirePath);
 
