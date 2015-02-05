@@ -25,8 +25,8 @@ module.exports = function(file, directory) {
     }
   ;
 
-  // start walk from outside node_module
-  directory = directory || (__dirname + '/../');
+  // start walk
+  directory = directory || __dirname;
 
   walk(directory);
 
