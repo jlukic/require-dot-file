@@ -5,22 +5,25 @@ var
 
 // walks parent folders until a dot file is found
 module.exports = function(file, directory) {
+
   var
     requirePath,
     walk = function(directory) {
-
-      if( fs.existsSync(directory + file) ) {
+      var
+        currentPath = path.normalize( path.join(directory, file) )
+      ;
+      if( fs.existsSync(currentPath) ) {
         // found file
-        requirePath = path.normalize(directory + file);
+        requirePath = path.normalize(currentPath);
         return;
       }
       else {
         // reached file system root, let's stop
-        if(path.resolve(directory) == '/') {
+        if(path.resolve(directory) == path.sep) {
           return;
         }
         // otherwise recurse
-        walk(directory + '../', file);
+        walk(directory + '..' + path.sep, file);
       }
     }
   ;
