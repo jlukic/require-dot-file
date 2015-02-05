@@ -28,8 +28,8 @@ module.exports = function(file, directory) {
     }
   ;
 
-  // start walk
-  directory = directory || __dirname;
+  // start walk from outside require-dot-files directory
+  directory = directory || __dirname + '..' + path.sep;
 
   walk(directory);
 
