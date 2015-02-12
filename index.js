@@ -5,12 +5,12 @@ var
 
 // walks parent folders until a dot file is found
 module.exports = function(file, directory) {
-
   var
     requirePath,
     walk = function(directory) {
       var
-        currentPath = path.normalize( path.join(directory, file) )
+        nextDirectory = path.resolve( path.join(directory, path.sep, '..') ),
+        currentPath   = path.normalize( path.join(directory, file) )
       ;
       if( fs.existsSync(currentPath) ) {
         // found file
@@ -19,18 +19,17 @@ module.exports = function(file, directory) {
       }
       else {
         // reached file system root, let's stop
-        if(path.resolve(directory) == path.sep) {
+        if(nextDirectory == directory) {
           return;
         }
         // otherwise recurse
-        walk(directory + '..' + path.sep, file);
+        walk(nextDirectory, file);
       }
     }
   ;
 
   // start walk from outside require-dot-files directory
-  directory = directory || __dirname + '..' + path.sep;
-
+  directory = directory || path.join(__dirname, '..');
   walk(directory);
 
   if(!requirePath) {
